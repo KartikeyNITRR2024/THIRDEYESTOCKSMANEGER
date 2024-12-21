@@ -36,6 +36,10 @@ public class AllMicroservicesData {
 		for(MicroservicesInfo microservicesInfo : allMicroservicesList)
 		{
 			logger.info("Microservice : {} ", microservicesInfo);
+			if(microservicesInfo.getType() == 0)
+			{
+				microservicesInfo.setMicroserviceUrl(microservicesInfo.getMicroserviceLocalUrl());
+			}
 			allMicroservices.put(microservicesInfo.getMicroserviceName(), microservicesInfo);
 		}
 	}
